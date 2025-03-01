@@ -2,7 +2,8 @@ import sqlite3
 from datetime import datetime
 
 def get_db():
-    return sqlite3.connect('../data/pet_health.db')
+    return sqlite3.connect('data/pet_health.db')
+
 
 def init_db():
     with get_db() as conn:

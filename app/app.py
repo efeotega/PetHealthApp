@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
 # Load model and feature columns
-model_data = joblib.load('../data/ai_model/pet_health_model.pkl')
+model_data = joblib.load('data/ai_model/pet_health_model.pkl')
 model = model_data['model']
 feature_columns = model_data['feature_columns']
 
