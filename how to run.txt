@@ -1,2 +1,5 @@
 To run, run the app
+pip install -r requirements.txt
+python data/ai_model/model_training.py
+python app/database.py
 python app/app.py
