@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Health Check</title>
+</head>
+<body>
+    <h1>Pet Health Monitor</h1>
+    <form action="/predict" method="post">
+        <label>Diet Type:</label>
+        <select name="diet">
+            <option value="kibble">Dry Kibble</option>
+            <option value="wet">Wet Food</option>
+            <option value="homemade">Homemade</option>
+        </select><br>
+
+        <label>Activity Level (1-5):</label>
+        <input type="number" name="behavior" min="1" max="5" required><br>
+
+        <label>Stool Type:</label>
+        <select name="stool_appearance">
+            <option value="normal">Normal</option>
+            <option value="soft">Soft</option>
+            <option value="hard">Hard</option>
+        </select><br>
+
+        <button type="submit">Check Health</button>
+    </form>
+</body>
+</html>

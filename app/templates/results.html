@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4>Health Analysis Report</h4>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-{{ 'success' if prediction == 'healthy' else 'danger' }}">
+            <h5>Overall Status: {{ prediction|title }}</h5>
+            <p>Confidence Level: {{ confidence }}</p>
+        </div>
+        
+        <a href="/" class="btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+diet,behavior,stool_appearance,health_status
+wet,1,soft,sick
+kibble,2,soft,sick
+homemade,3,hard,sick
+wet,2,bloody,sick
+kibble,5,normal,healthy
+homemade,4,normal,healthy
+wet,3,soft,sick

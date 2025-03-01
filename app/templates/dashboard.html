@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>New Health Log</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/log">
+                    <div class="mb-3">
+                        <label class="form-label">Diet Type</label>
+                        <select name="diet" class="form-select">
+                            <option value="kibble">Dry Kibble</option>
+                            <option value="wet">Wet Food</option>
+                            <option value="homemade">Homemade</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Activity Level (1-5)</label>
+                        <input type="number" name="behavior" class="form-control" 
+                               min="1" max="5" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Stool Consistency</label>
+                        <select name="stool_appearance" class="form-select">
+                            <option value="normal">Normal</option>
+                            <option value="soft">Soft</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Log</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Recent Logs</h4>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    {% for log in logs %}
+                    <div class="list-group-item">
+                        <small class="text-muted">{{ log[4] }}</small><br>
+                        Diet: {{ log[1] }} | Activity: {{ log[2] }} | Stool: {{ log[3] }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <a href="/predict" class="btn btn-warning mt-3">Check Health Status</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

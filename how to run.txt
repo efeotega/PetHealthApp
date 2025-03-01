@@ -1,0 +1,2 @@
+To run, run the app
+python app/app.py
